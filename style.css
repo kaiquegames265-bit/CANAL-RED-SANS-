@@ -1,0 +1,28 @@
+body {
+  background-color: #121212;
+  color: #ff0000;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Impede bordas indesejadas e esconde imagens com erro de carregamento */
+img {
+  border: none;
+  max-width: 100%;
+}
+
+img:not([src]), img[src=""] {
+  display: none;
+}
+
