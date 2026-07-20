@@ -4,17 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CANAL RED SANS</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset básico e configuração de altura total da tela */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Estilização do Plano de Fundo usando a imagem fornecida */
+    body {
+      background-image: url('48845.png'); /* Nome do arquivo da imagem de fundo */
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      
+      /* Centralização do conteúdo na tela */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Container para destacar o conteúdo sobre a imagem de fundo */
+    .container {
+      background-color: rgba(0, 0, 0, 0.75); /* Fundo preto semi-transparente */
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border: 2px solid #ff0000;
+      text-align: center;
+      max-width: 90%;
+      width: 400px;
+      backdrop-filter: blur(5px); /* Efeito de desfoque sutil no fundo */
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    /* Estilo do Botão de Copiar */
+    #btn-copiar {
+      background-color: #ff0000;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+    }
+
+    #btn-copiar:hover {
+      background-color: #cc0000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+    }
+
+    #btn-copiar:active {
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Plotagem RedSans fr</h1>
+  <!-- Container centralizado com visual adaptado -->
+  <div class="container">
+    <h1>Plotagem RedSans fr</h1>
 
-  <!-- Botão que executa a cópia -->
-  <button id="btn-copiar" onclick="copiarSkin()">Copiar</button>
+    <!-- Botão que executa a cópia -->
+    <button id="btn-copiar" onclick="copiarSkin()">Copiar</button>
 
-  <!-- Caixa com o código da skin (invisível na tela para manter o visual limpo) -->
-  <textarea id="codigo-skin" style="display: none;">FFFF00D00389004C01FB004AFFFFFFFF0005
+    <!-- Caixa com o código da skin (invisível) -->
+    <textarea id="codigo-skin" style="display: none;">FFFF00D00389004C01FB004AFFFFFFFF0005
 <
     000200000000006400640000FFFFFFFF0001
 >
@@ -102,20 +180,19 @@ FFFF02B7FFB3002C002CFFA6FF0000FF0001
 <
     040000000000006400640000FFFFFFFF0001
 ></textarea>
+  </div>
 
-  <!-- Script que faz a mágica de copiar -->
+  <!-- Script da funcionalidade de cópia -->
   <script>
     function copiarSkin() {
       const textoSkin = document.getElementById("codigo-skin").value;
       const botao = document.getElementById("btn-copiar");
 
       navigator.clipboard.writeText(textoSkin).then(() => {
-        // Altera o texto do botão para avisar que foi copiado
         botao.innerText = "Copiado!";
         botao.style.backgroundColor = "#00ff00";
         botao.style.color = "#000000";
 
-        // Volta ao normal depois de 2 segundos
         setTimeout(() => {
           botao.innerText = "Copiar";
           botao.style.backgroundColor = "#ff0000";
