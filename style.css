@@ -1,22 +1,69 @@
+/* Configurações do Fundo da Página com a Imagem */
 body {
   background-color: #121212;
+  background-image: url('48845.png'); /* AQUI ESTÁ A IMAGEM QUE FALTAVA */
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
   color: #ff0000;
   font-family: sans-serif;
   text-align: center;
   padding: 20px;
+  
+  /* Centraliza a caixa no meio da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
+/* Caixa escura em volta do conteúdo para dar leitura */
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px 25px;
+  border-radius: 16px;
+  border: 2px solid #ff0000;
+  max-width: 90%;
+  width: 380px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+}
+
+/* Título */
+h1 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* Botão de Copiar */
 button {
   background-color: #ff0000;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
-/* Impede bordas indesejadas e esconde imagens com erro de carregamento */
+button:hover {
+  background-color: #cc0000;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Regras auxiliares para imagens */
 img {
   border: none;
   max-width: 100%;
@@ -25,4 +72,3 @@ img {
 img:not([src]), img[src=""] {
   display: none;
 }
-
