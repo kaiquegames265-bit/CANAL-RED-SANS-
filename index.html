@@ -5,36 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLOTAGEM REDSANS FR</title>
   <style>
-    /* Reset Básico */
+    /* Reset Geral */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    /* Fundo da Página (Igual à Primeira Imagem) */
+    /* Fundo com a Imagem Embutida em Base64 */
     body {
-      /* Caso tenha a imagem salva no servidor, substitua a URL abaixo */
-      background: url('fundo.jpg') no-repeat center top fixed;
-      background-size: cover;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAASwCAYAAADd2A/sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHGSURBVHhe7cAxAQAACMCA9f9fX6EEDw00AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4NO4EAAa+JjV0AAAAASUVORK5CYII=");
+      /* A imagem abaixo utiliza a referência exata enviada */
+      background: url('fundo.png') no-repeat center top;
+      background-size: 100% auto;
       background-color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 10px;
+      /* Ajuste para empurrar as caixas para baixo do banner */
+      padding-top: 220px; 
+      padding-bottom: 40px;
+      padding-left: 15px;
+      padding-right: 15px;
       min-height: 100vh;
     }
 
-    /* Banner / Banner de Topo (Opcional) */
-    .banner-header {
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    /* Conteúdo Principal */
+    /* Estrutura Central das Caixas */
     .container {
       width: 100%;
       max-width: 360px;
@@ -43,7 +40,7 @@
       gap: 25px;
     }
 
-    /* Estilo do Card (Caixa Preta do Modelo) */
+    /* Caixas Pretas (Estilo Exato da Imagem) */
     .card {
       background: linear-gradient(180deg, #2b2b2b 0%, #151515 100%);
       border: 2px solid #ff0000;
@@ -57,7 +54,7 @@
       justify-content: center;
     }
 
-    /* Título dentro do Card */
+    /* Título Interno */
     .card-title {
       color: #ffffff;
       font-size: 20px;
@@ -68,7 +65,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Botão Vermelho Estilizado */
+    /* Botão Vermelho */
     .btn-red {
       width: 100%;
       background-color: #ff0000;
@@ -80,7 +77,7 @@
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-      transition: transform 0.1s ease, background-color 0.2s;
+      transition: transform 0.1s ease, background-color 0.2s ease;
     }
 
     .btn-red:active {
@@ -88,7 +85,7 @@
       background-color: #cc0000;
     }
 
-    /* Esconde o código longo da tela para manter o design limpo */
+    /* Esconde os códigos brutos da tela */
     .code-data {
       display: none;
     }
@@ -103,7 +100,6 @@
       <h2 class="card-title">PLOTAGEM<br>REDSANS FR 1</h2>
       <button class="btn-red" onclick="copiarCodigo('codigo1', this)">Copiar</button>
       
-      <!-- Dados da Parte 1 -->
       <textarea id="codigo1" class="code-data">
 FFFFFE6DFFD801BA0064005AFFFFFFFF0001
 <
@@ -148,7 +144,6 @@ FFFFFC76025B0107006400B3FF0000FF0005
       <h2 class="card-title">PLOTAGEM<br>REDSANS FR 2</h2>
       <button class="btn-red" onclick="copiarCodigo('codigo2', this)">Copiar</button>
       
-      <!-- Dados da Parte 2 -->
       <textarea id="codigo2" class="code-data">
 FFFFFD8AFE0500170017005A434343FF0005
 <
@@ -215,11 +210,12 @@ FFFFFC9DFE5900280028000E33CC00FF0001
       const texto = document.getElementById(id).value;
       
       navigator.clipboard.writeText(texto).then(() => {
+        const textoOriginal = botao.innerText;
         botao.innerText = 'Copiado!';
         botao.style.backgroundColor = '#00aa00';
         
         setTimeout(() => {
-          botao.innerText = 'Copiar';
+          botao.innerText = textoOriginal;
           botao.style.backgroundColor = '#ff0000';
         }, 2000);
       });
