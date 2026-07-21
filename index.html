@@ -3,130 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CANAL RED SANS</title>
+  <title>Página Inicial</title>
+  <!-- Link para o arquivo CSS contendo as regras da imagem -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Caixa centralizada sobre o fundo -->
+  <!-- Container principal centralizado pelo CSS (.container) -->
   <div class="container">
-    <h1>PLOTAGEM<br>REDSANS FR</h1>
+    
+    <!-- Imagem opcional formatada pelas regras img do CSS -->
+    <img src="RED_20260720_233507_0000.png" alt="Imagem principal">
+    
+    <!-- Título principal estilizado pelo h1 do CSS -->
+    <h1>Seu Título Aqui</h1>
 
-    <!-- Botão de copiar -->
-    <button id="btn-copiar" onclick="copiarSkin()">Copiar</button>
+    <!-- Botão estilizado pelo seletor button do CSS -->
+    <button type="button">Copiar</button>
 
-    <!-- Código oculto para cópia -->
-    <textarea id="codigo-skin" style="display: none;">FFFF00D00389004C01FB004AFFFFFFFF0005
-<
-    000200000000006400640000FFFFFFFF0001
->
-FFFFFED203A3003900390001FF0000FF0005
-<
-    003A00000000006400640000FFFFFFFF0001
->
-FFFFFF9703D400340064000BFF0000FF0005
-<
-    000200000000006400640000FFFFFFFF0001
->
-FFFF005F03A40037006B000BFF0000FF0005
-<
-    000200000000006400640000FFFFFFFF0001
->
-FFFF0145037A0034006B000BFF0000FF0005
-<
-    000200000000006400640000FFFFFFFF0001
->
-FFFF02DC03110034006B000BFF0000FF0005
-<
-    000200000000006400640000FFFFFFFF0001
->
-FFFFFFFC0351029B00B6FFEF000000FF0005
-<
-    003E00000000006400640000FFFFFFFF0001
->
-FFFF01B40317014A00AAFFF7FFFFFFFF0005
-<
-    001100000000006400640000FFFFFFFF0001
->
-FFFF0117060C00930093FFEE000000FF0005
-<
-    0FA500000000006400640000FFFFFFFF0001
->
-FFFFFF1F0377029B00B6FFEFFFFFFFFF0005
-<
-    003E00000000006400640000FFFFFFFF0001
->
-FFFFFF1F0373029B00B6FFEFFFFFFFFF0005
-<
-    003E00000000006400640000FFFFFFFF0001
->
-FFFFFD7EFFB7035B01BE0000FF0000FF0001
-<
-    003E00000000006400640000FFFFFFFF0001
->
-FFFFFD7E002E035B01BE0000FF0000FF0001
-<
-    003E00000000006400640000FFFFFFFF0001
->
-FFFFFE7E00C7003700370033FF0000FF0001
-<
-    13A000000000006400640000FFFFFFFF0001
->
-FFFFFEA0FF0D003700370096FF0000FF0001
-<
-    139F00000000006400640000FFFFFFFF0001
->
-FFFF02B7008D00290029FFA6FF0000FF0001
-<
-    040400000000006400640000FFFFFFFF0001
->
-FFFF02B8006500290029FFA6FF0000FF0001
-<
-    03F700000000006400640000FFFFFFFF0001
->
-FFFF02B8003E00270027FFA6FF0000FF0001
-<
-    03F600000000006400640000FFFFFFFF0001
->
-FFFF02B6FFFD00280028FFA6FF0000FF0001
-<
-    040500000000006400640000FFFFFFFF0001
->
-FFFF02B8FF8E00280028FFA6FF0000FF0001
-<
-    040500000000006400640000FFFFFFFF0001
->
-FFFF02B7FFDA00200028FFA6FF0000FF0001
-<
-    040700000000006400640000FFFFFFFF0001
->
-FFFF02B7FFB3002C002CFFA6FF0000FF0001
-<
-    040000000000006400640000FFFFFFFF0001
-></textarea>
   </div>
-
-  <!-- JavaScript para acionar a cópia -->
-  <script>
-    function copiarSkin() {
-      const textoSkin = document.getElementById("codigo-skin").value;
-      const botao = document.getElementById("btn-copiar");
-
-      navigator.clipboard.writeText(textoSkin).then(() => {
-        botao.innerText = "Copiado!";
-        botao.style.backgroundColor = "#00ff00";
-        botao.style.color = "#000000";
-
-        setTimeout(() => {
-          botao.innerText = "Copiar";
-          botao.style.backgroundColor = "#ff0000";
-          botao.style.color = "#ffffff";
-        }, 2000);
-      }).catch(err => {
-        alert("Erro ao copiar o código.");
-      });
-    }
-  </script>
 
 </body>
 </html>
