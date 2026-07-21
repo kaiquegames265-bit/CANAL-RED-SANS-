@@ -1,75 +1,103 @@
-/* Configurações do Fundo da Página */
+/* =========================================
+   1. ESTILO GERAL E FUNDO DO SITE
+   ========================================= */
 body {
-  background-color: #121212;
-  /* Nome exato da imagem que está no seu GitHub */
-  background-image: url('RED_20260720_233507_0000.png'); 
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  
-  color: #ff0000;
-  font-family: sans-serif;
-  text-align: center;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 20px;
-  
-  /* Centraliza o conteúdo */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Caixa centralizada para o botão e título */
-.container {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 30px 25px;
-  border-radius: 16px;
-  border: 2px solid #ff0000;
-  max-width: 90%;
-  width: 380px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-  backdrop-filter: blur(4px);
+.container-titulo {
+  text-align: center;
+  color: #58a6ff;
+  margin-bottom: 10px;
 }
 
-/* Título */
-h1 {
-  color: #ffffff;
-  font-size: 22px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-}
-
-/* Botão de Copiar */
-button {
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  padding: 12px 24px;
+/* =========================================
+   2. ESTRUTURA DO CARD DE CÓDIGO
+   ========================================= */
+.code-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
   border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.2s, transform 0.1s;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-button:hover {
-  background-color: #cc0000;
+/* =========================================
+   3. CABEÇALHO DA CAIXA DE CÓDIGO
+   ========================================= */
+.code-header {
+  background-color: #21262d;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #30363d;
 }
 
-button:active {
-  transform: scale(0.98);
+.code-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b949e;
 }
 
-img {
+/* =========================================
+   4. BOTÃO DE COPIAR
+   ========================================= */
+.btn-copy {
+  background-color: #238636;
+  color: #ffffff;
   border: none;
-  max-width: 100%;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-img:not([src]), img[src=""] {
-  display: none;
+.btn-copy:hover {
+  background-color: #2ea043;
+}
+
+.btn-copy:active {
+  transform: scale(0.96);
+}
+
+/* =========================================
+   5. ÁREA DE TEXTO / BLOCO DE CÓDIGO
+   ========================================= */
+.code-block {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e6edf3;
+  white-space: pre;
+}
+
+/* Customização da barra de rolagem horizontal */
+.code-block::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: #8b949e;
 }
