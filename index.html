@@ -3,213 +3,228 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caixas de Código</title>
+  <title>PLOTAGEM REDSANS FR</title>
   <style>
-    /* Estilo do Fundo */
+    /* Reset Básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Fundo da Página (Igual à Primeira Imagem) */
     body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      padding: 20px;
+      /* Caso tenha a imagem salva no servidor, substitua a URL abaixo */
+      background: url('fundo.jpg') no-repeat center top fixed;
+      background-size: cover;
+      background-color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .container-titulo {
-      text-align: center;
-      color: #58a6ff;
-    }
-
-    /* Estrutura do Card de Código */
-    .code-card {
-      background-color: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Cabeçalho da Caixa de Código */
-    .code-header {
-      background-color: #21262d;
-      padding: 10px 16px;
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #30363d;
+      padding: 20px 10px;
+      min-height: 100vh;
     }
 
-    .code-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #8b949e;
+    /* Banner / Banner de Topo (Opcional) */
+    .banner-header {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    /* Botão de Copiar */
-    .btn-copy {
-      background-color: #238636;
+    /* Conteúdo Principal */
+    .container {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    /* Estilo do Card (Caixa Preta do Modelo) */
+    .card {
+      background: linear-gradient(180deg, #2b2b2b 0%, #151515 100%);
+      border: 2px solid #ff0000;
+      border-radius: 20px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Título dentro do Card */
+    .card-title {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Botão Vermelho Estilizado */
+    .btn-red {
+      width: 100%;
+      background-color: #ff0000;
       color: #ffffff;
       border: none;
-      padding: 6px 12px;
-      font-size: 12px;
-      border-radius: 4px;
+      padding: 14px 0;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+      transition: transform 0.1s ease, background-color 0.2s;
     }
 
-    .btn-copy:hover {
-      background-color: #2ea043;
+    .btn-red:active {
+      transform: scale(0.97);
+      background-color: #cc0000;
     }
 
-    /* Área de Texto do Código */
-    .code-block {
-      margin: 0;
-      padding: 16px;
-      overflow-x: auto;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #e6edf3;
-      white-space: pre;
+    /* Esconde o código longo da tela para manter o design limpo */
+    .code-data {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h2 class="container-titulo">Registros de Dados</h2>
+  <div class="container">
 
-  <!-- PRIMEIRA CAIXA DE CÓDIGO -->
-  <div class="code-card">
-    <div class="code-header">
-      <span class="code-title">Bloco de Dados - Parte 1</span>
-      <button class="btn-copy" onclick="copyCode('code1', this)">Copiar Código</button>
-    </div>
-    <pre class="code-block" id="code1">
+    <!-- PRIMEIRA CAIXA -->
+    <div class="card">
+      <h2 class="card-title">PLOTAGEM<br>REDSANS FR 1</h2>
+      <button class="btn-red" onclick="copiarCodigo('codigo1', this)">Copiar</button>
+      
+      <!-- Dados da Parte 1 -->
+      <textarea id="codigo1" class="code-data">
 FFFFFE6DFFD801BA0064005AFFFFFFFF0001
-&lt;
+<
     000200000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE31FF1E00640064005AFF0000FF0001
-&lt;
+<
     040400000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE33FF7A00640064005AFF0000FF0001
-&lt;
+<
     03F700000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE33FFD700640064005AFF0000FF0001
-&lt;
+<
     03F600000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE33005A00640064005AFF0000FF0001
-&lt;
+<
     040500000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE39018200640064005AFF0000FF0001
-&lt;
+<
     040500000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE3600C800640064005AFF0000FF0001
-&lt;
+<
     040700000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE36012700640064005AFF0000FF0001
-&lt;
+<
     040000000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFC76025B0107006400B3FF0000FF0005
-&lt;
+<
     003200000000006400640000FFFFFFFF0001
-&gt;</pre>
-  </div>
-
-  <!-- SEGUNDA CAIXA DE CÓDIGO -->
-  <div class="code-card">
-    <div class="code-header">
-      <span class="code-title">Bloco de Dados - Parte 2</span>
-      <button class="btn-copy" onclick="copyCode('code2', this)">Copiar Código</button>
+></textarea>
     </div>
-    <pre class="code-block" id="code2">
+
+    <!-- SEGUNDA CAIXA -->
+    <div class="card">
+      <h2 class="card-title">PLOTAGEM<br>REDSANS FR 2</h2>
+      <button class="btn-red" onclick="copiarCodigo('codigo2', this)">Copiar</button>
+      
+      <!-- Dados da Parte 2 -->
+      <textarea id="codigo2" class="code-data">
 FFFFFD8AFE0500170017005A434343FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFD05FDDD00170017005A434343FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFD05FDDD00110011005A000000FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFD8AFE0500100010005A000000FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE31FE940034002F005AFF0000FF0001
-&lt;
+<
     002F00000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE2EFE980013001700B4FFFFFFFF0001
-&lt;
+<
     000400000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFDFE033A006400A00004FF1818FF0005
-&lt;
+<
     003200000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE5302FF001400140000313131FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE10033D0014001400002E2E2EFF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE10033D000F000F0000000000FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFE5302FF000D000D0000000000FF0005
-&lt;
+<
     000300000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFC9FFE3200280028000133CC00FF0001
-&lt;
+<
     001100000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFC9EFE8600280028001633CC00FF0001
-&lt;
+<
     001100000000006400640000FFFFFFFF0001
-&gt;
+>
 FFFFFC9DFE5900280028000E33CC00FF0001
-&lt;
+<
     001100000000006400640000FFFFFFFF0001
-&gt;</pre>
+></textarea>
+    </div>
+
   </div>
 
   <script>
-    function copyCode(elementId, button) {
-      const codeText = document.getElementById(elementId).innerText;
+    function copiarCodigo(id, botao) {
+      const texto = document.getElementById(id).value;
       
-      navigator.clipboard.writeText(codeText).then(() => {
-        const originalText = button.innerText;
-        button.innerText = 'Copiado!';
-        button.style.backgroundColor = '#1f6feb';
+      navigator.clipboard.writeText(texto).then(() => {
+        botao.innerText = 'Copiado!';
+        botao.style.backgroundColor = '#00aa00';
         
         setTimeout(() => {
-          button.innerText = originalText;
-          button.style.backgroundColor = '#238636';
+          botao.innerText = 'Copiar';
+          botao.style.backgroundColor = '#ff0000';
         }, 2000);
-      }).catch(err => {
-        console.error('Erro ao copiar: ', err);
       });
     }
   </script>
 
 </body>
-  </html>
-  
+</html>
