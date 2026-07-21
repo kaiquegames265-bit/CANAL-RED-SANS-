@@ -12,13 +12,13 @@
       padding: 0;
     }
 
-    /* Fundo da Página usando a imagem baixada na pasta */
+    /* Fundo travado cobrindo toda a tela (sem espaço em branco) */
     body {
       background-image: url('RED_20260720_233507_0000.png');
       background-repeat: no-repeat;
       background-position: center top;
-      background-size: 100% auto;
-      background-attachment: scroll;
+      background-size: cover;        /* Preenche toda a tela sem deixar espaço em branco */
+      background-attachment: fixed;  /* Mantém a imagem fixa ao rolar a página */
       background-color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
       
@@ -26,9 +26,9 @@
       flex-direction: column;
       align-items: center;
       
-      /* Empurra os cards para baixo do banner do topo */
+      /* Empurra as caixas para baixo do banner no topo */
       padding-top: 260px; 
-      padding-bottom: 40px;
+      padding-bottom: 50px;
       padding-left: 15px;
       padding-right: 15px;
       min-height: 100vh;
@@ -88,7 +88,7 @@
       background-color: #cc0000;
     }
 
-    /* Esconde os textos de código brutos da tela */
+    /* Esconde os textos de código brutos */
     .code-data {
       display: none;
     }
