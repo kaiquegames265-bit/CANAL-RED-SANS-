@@ -13,72 +13,38 @@
         }
 
         body {
-            background-color: #0d0000;
-            /* Se quiser usar a sua própria imagem de fundo, descomente a linha abaixo e coloque o caminho da imagem */
-             background-image: url('RED_20260721_141026_0000.png'); */
+            /* Coloque aqui o nome do arquivo da SUA imagem de fundo inteira */
+            background-image: url('RED_20260721_141026_0000.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
-            color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 90px;
-            overflow-x: hidden;
-        }
-
-        /* Banner de Topo */
-        .header {
-            width: 100%;
-            background: linear-gradient(180deg, rgba(180, 0, 0, 0.6) 0%, rgba(10, 0, 0, 0.9) 100%);
-            padding: 20px 10px;
-            display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 2px solid #ff0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+            padding-top: 100px;  /* Dá espaço para o topo da sua imagem */
+            padding-bottom: 100px; /* Dá espaço para o rodapé da sua imagem */
         }
 
-        .header h1 {
-            font-size: 28px;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        .avatar-placeholder {
-            width: 60px;
-            height: 60px;
-            background-color: #e60000;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-        }
-
-        /* Container Principal */
+        /* Container que centraliza apenas os dois cards */
         .main-container {
             width: 90%;
-            max-width: 420px;
-            margin-top: 30px;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
         /* Cards de Plotagem */
         .card {
-            background: rgba(20, 20, 20, 0.9);
-            border: 2px solid #e60000;
+            background: rgba(18, 18, 18, 0.95);
+            border: 2px solid #ff0000;
             border-radius: 20px;
             padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(230, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
         }
 
         .card h2 {
@@ -87,7 +53,6 @@
             margin-bottom: 20px;
             color: #ffffff;
             text-transform: uppercase;
-            text-shadow: 1px 1px 3px #000;
         }
 
         /* Botões de Copiar */
@@ -101,8 +66,8 @@
             font-size: 20px;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+            transition: transform 0.1s ease, background 0.2s ease;
         }
 
         .btn-copiar:active {
@@ -110,36 +75,14 @@
             background: #cc0000;
         }
 
-        /* Texto/Rodapé INSCREVA-SE */
-        .footer-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 70px;
-            background: linear-gradient(0deg, rgba(150, 0, 0, 0.95) 0%, rgba(50, 0, 0, 0.8) 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-top: 2px solid #ff0000;
-            z-index: 90;
-        }
-
-        .footer-banner span {
-            font-size: 32px;
-            color: #ffffff;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 5px #000;
-        }
-
-        /* --- BOTÃO INVISÍVEL CLICÁVEL --- */
+        /* --- BOTÃO INVISÍVEL SOBRE O "INSCREVA-SE" DA SUA IMAGEM --- */
         .link-inscreva-se {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 70px; /* Cobrirá exatamente a área do Inscreva-se */
-            z-index: 100; /* Fica acima de tudo para receber o clique */
+            height: 80px; /* Altura da área do "INSCREVA-SE" no fundo */
+            z-index: 1000;
             cursor: pointer;
             text-decoration: none;
         }
@@ -147,43 +90,31 @@
 </head>
 <body>
 
-    <!-- Topo com nome e avatar -->
-    <div class="header">
-        <h1>RED</h1>
-        <div class="avatar-placeholder"></div>
-        <h1>SANS</h1>
-    </div>
-
-    <!-- Container dos Botões/Cards -->
+    <!-- Apenas as duas caixas de código -->
     <div class="main-container">
 
-        <!-- Plotagem Corpo -->
+        <!-- Card Plotagem Corpo -->
         <div class="card">
             <h2>PLOTAGEM<br>CORPO</h2>
-            <button class="btn-copiar" onclick="copiarCodigo('COLE_O_CODIGO_DO_CORPO_AQUI')">Copiar</button>
+            <button class="btn-copiar" onclick="copiarCodigo('CÓDIGO_DO_CORPO_AQUI')">Copiar</button>
         </div>
 
-        <!-- Plotagem Vidro -->
+        <!-- Card Plotagem Vidro -->
         <div class="card">
             <h2>PLOTAGEM<br>VIDRO</h2>
-            <button class="btn-copiar" onclick="copiarCodigo('COLE_O_CODIGO_DO_VIDRO_AQUI')">Copiar</button>
+            <button class="btn-copiar" onclick="copiarCodigo('CÓDIGO_DO_VIDRO_AQUI')">Copiar</button>
         </div>
 
     </div>
 
-    <!-- Visual do Rodapé -->
-    <div class="footer-banner">
-        <span>INSCREVA-SE</span>
-    </div>
-
-    <!-- BOTÃO INVISÍVEL REDIRECIONANDO PARA SEU CANAL -->
+    <!-- Botão transparente posicionado exatamente onde fica o "INSCREVA-SE" da imagem de fundo -->
     <a href="https://www.youtube.com/@RedSans00215" target="_blank" class="link-inscreva-se" title="Inscreva-se no canal Red Sans!"></a>
 
     <script>
         function copiarCodigo(texto) {
             navigator.clipboard.writeText(texto).then(() => {
                 alert('Código copiado com sucesso!');
-            }).catch(err => {
+            }).catch(() => {
                 alert('Erro ao copiar o código.');
             });
         }
