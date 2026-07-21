@@ -1,5 +1,5 @@
 /* =========================================
-   1. RESET E FUNDO DA PÁGINA
+   1. RESET GERAL E CONFIGURAÇÃO DA PÁGINA
    ========================================= */
 * {
   box-sizing: border-box;
@@ -8,20 +8,25 @@
 }
 
 body {
-  /* Altere 'fundo.jpg' para o nome ou link da sua imagem de fundo */
-  background: url('fundo.jpg') no-repeat center top fixed;
-  background-size: cover;
+  /* Altere 'fundo.png' caso a sua imagem de fundo tenha outro nome na pasta */
+  background: url('fundo.png') no-repeat center top;
+  background-size: 100% auto;
   background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 10px;
+  
+  /* Posição das caixas: 220px empurra os cards para baixo do banner RED SANS */
+  padding-top: 220px; 
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
   min-height: 100vh;
 }
 
 /* =========================================
-   2. CONTAINER DAS CAIXAS
+   2. ESTRUTURA CENTRAL
    ========================================= */
 .container {
   width: 100%;
@@ -32,7 +37,7 @@ body {
 }
 
 /* =========================================
-   3. ESTILO DO CARD (IGUAL À PRIMEIRA FOTO)
+   3. CAIXAS PRETAS (LAYOUT DA IMAGEM)
    ========================================= */
 .card {
   background: linear-gradient(180deg, #2b2b2b 0%, #151515 100%);
@@ -59,7 +64,7 @@ body {
 }
 
 /* =========================================
-   4. BOTÃO VERMELHO
+   4. BOTÃO REDONDO VERMELHO
    ========================================= */
 .btn-red {
   width: 100%;
@@ -81,7 +86,7 @@ body {
 }
 
 /* =========================================
-   5. OCULTAR O CÓDIGO BRUTO DA TELA
+   5. OCULTAR O CÓDIGO DA TELA
    ========================================= */
 .code-data {
   display: none;
