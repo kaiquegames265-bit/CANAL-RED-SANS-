@@ -1,103 +1,175 @@
-/* ==========================================
-   RESET & ESTRUTURA GERAL
-   ========================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html, body {
-  width: 100%;
-  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  /* Mantém a imagem cobrindo 100% do fundo sem faixa preta */
-  background-image: url('RED_20260721_141026_0000.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
+  background-color: #121212;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 90px;
 }
 
-/* ==========================================
-   CONTAINER DOS CARDS (DESLOCADO PARA BAIXO)
-   ========================================== */
-.main-container {
+/* Banner do topo */
+.header-banner {
   width: 100%;
-  max-width: 420px;
-  /* Espaçamento do topo para descer as caixas abaixo da logo */
-  margin-top: 220px !important; 
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 100px;
+  max-width: 500px;
+  text-align: center;
+}
+.banner-img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ff0000;
+}
+
+/* Container */
+.content-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Box de Avisos */
+.aviso-box {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+.aviso-box summary {
+  font-weight: bold;
+  text-align: center;
+}
+.aviso-conteudo {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.divisor {
+  border: 0;
+  height: 1px;
+  background: #333;
+}
+
+/* Redes Sociais */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.social-btn {
+  padding: 8px 15px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.social-btn.red { background-color: #ff0000; }
+.social-btn.pink { background-color: #e1306c; }
+.social-btn.black { background-color: #25f4ee; color: #000; }
+
+/* Títulos */
+.section-title, .section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+/* Botões de Categorias (Estilo Rzin) */
+.category-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn-outline {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Galeria de Carros */
+.grid-plotagens {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-/* ==========================================
-   CAIXAS DOS CARDS
-   ========================================== */
-.card {
-  background-color: rgba(18, 18, 18, 0.92); /* Fundo escuro do card */
-  border: 2px solid #ff0000;                /* Borda vermelha chamativa */
-  border-radius: 20px;                      /* Bordas arredondadas */
-  padding: 30px 20px 20px 20px;
+.car-card {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  padding-bottom: 12px;
 }
-
-.card h2 {
-  color: #ffffff;
-  font-size: 1.3rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-  line-height: 1.3;
-  letter-spacing: 1px;
+.car-image-container {
+  position: relative;
 }
-
-/* ==========================================
-   BOTÃO DE COPIAR (DENTRO DOS CARDS)
-   ========================================== */
-.btn-copiar {
-  background-color: #ff0000;
-  color: #ffffff;
-  border: none;
-  border-radius: 14px;
-  padding: 14px 0;
+.car-image-container img {
   width: 100%;
-  font-size: 1.1rem;
+  display: block;
+}
+.badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+.car-title {
   font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.1s ease, background-color 0.2s ease;
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+.btn-copiar-mini {
+  display: inline-block;
+  background: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.85rem;
 }
 
-.btn-copiar:active {
-  transform: scale(0.97);
-  background-color: #d60000;
-}
-
-/* ==========================================
-   BOTÃO INVISÍVEL NO RODAPÉ
-   ========================================== */
-.link-inscreva-se {
+/* Rodapé */
+.footer-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  background: transparent;
-  display: block;
-  z-index: 9999;
+  background: #ff0000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 900;
   text-decoration: none;
-  outline: none;
+  letter-spacing: 2px;
+  z-index: 999;
 }
