@@ -2,35 +2,46 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
-  background-color: #121212;
-  color: #ffffff;
+  /* Fundo esticado cobrindo tudo sem cortes pretos */
+  background-image: url('RED_20260721_141026_0000.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0d0d0d;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 90px;
 }
 
-/* Banner do topo */
+/* Banner topo */
 .header-banner {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   text-align: center;
 }
+
 .banner-img {
   width: 100%;
   height: auto;
-  border-bottom: 2px solid #ff0000;
+  display: block;
 }
 
-/* Container */
+/* Container do Conteúdo */
 .content-container {
   width: 100%;
-  max-width: 450px;
-  padding: 15px;
+  max-width: 420px;
+  padding: 20px 15px 100px 15px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -38,27 +49,26 @@ body {
 
 /* Box de Avisos */
 .aviso-box {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
+  background-color: rgba(20, 20, 20, 0.95);
+  border: 1px solid #ff0000;
+  border-radius: 12px;
   padding: 12px;
-  cursor: pointer;
+  color: #fff;
 }
+
 .aviso-box summary {
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
+  color: #fff;
 }
+
 .aviso-conteudo {
   margin-top: 10px;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #ccc;
-}
-
-.divisor {
-  border: 0;
-  height: 1px;
-  background: #333;
+  color: #ddd;
+  text-align: center;
 }
 
 /* Redes Sociais */
@@ -67,109 +77,97 @@ body {
   justify-content: center;
   gap: 10px;
 }
+
 .social-btn {
-  padding: 8px 15px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 8px;
   color: #fff;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: bold;
 }
+
 .social-btn.red { background-color: #ff0000; }
 .social-btn.pink { background-color: #e1306c; }
-.social-btn.black { background-color: #25f4ee; color: #000; }
+.social-btn.black { background-color: #222; border: 1px solid #444; }
 
-/* Títulos */
 .section-title, .section-subtitle {
   text-align: center;
   font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px #000;
   margin: 10px 0;
 }
 
-/* Botões de Categorias (Estilo Rzin) */
+/* Botões do Menu */
 .category-menu {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .btn-outline {
-  border: 1px solid #ffffff;
+  border: 1.5px solid #ffffff;
   color: #ffffff;
-  background: transparent;
-  padding: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 14px;
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
-  transition: 0.2s;
-}
-.btn-outline:hover {
-  background-color: #ffffff;
-  color: #000000;
 }
 
-/* Galeria de Carros */
+.divisor {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cards das Plotagens */
 .grid-plotagens {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-.car-card {
-  background: #1e1e1e;
-  border: 1px solid #333;
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: center;
-  padding-bottom: 12px;
-}
-.car-image-container {
-  position: relative;
-}
-.car-image-container img {
-  width: 100%;
-  display: block;
-}
-.badge {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-  padding: 3px 8px;
-  font-size: 0.75rem;
-  border-radius: 4px;
-}
-.car-title {
-  font-weight: bold;
-  margin: 10px 0;
-  font-size: 0.95rem;
-}
-.btn-copiar-mini {
-  display: inline-block;
-  background: #ff0000;
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 0.85rem;
+  gap: 15px;
 }
 
-/* Rodapé */
-.footer-banner {
+.car-card {
+  background-color: rgba(18, 18, 18, 0.92);
+  border: 2px solid #ff0000;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.car-title {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.btn-copiar {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Botão Invisível do Canal no Rodapé */
+.link-inscreva-se {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #ff0000;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  font-weight: 900;
-  text-decoration: none;
-  letter-spacing: 2px;
-  z-index: 999;
+  height: 70px;
+  background: transparent;
+  display: block;
+  z-index: 9999;
 }
