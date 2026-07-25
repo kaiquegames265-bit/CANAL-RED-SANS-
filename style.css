@@ -15,7 +15,7 @@ html, body {
 
 body {
   /* Mantém a imagem cobrindo 100% do fundo sem faixa preta */
-  background-image: url('RED_20260721_141026_0000.png'); /* Altere se o nome do seu arquivo de imagem for diferente */
+  background-image: url('RED_20260721_141026_0000.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,13 +27,16 @@ body {
 }
 
 /* ==========================================
-   CONTAINER DOS CARDS (DESCIDO PARA ABAIXO DO LOGO)
+   CONTAINER DOS CARDS (DESLOCADO PARA BAIXO)
    ========================================== */
 .main-container {
   width: 100%;
   max-width: 420px;
-  margin-top: 140px; /* EMPURRA AS CAIXAS PARA BAIXO */
-  padding: 0 15px 100px 15px; /* Espaço na parte inferior para não cobrir com o rodapé */
+  /* Espaçamento do topo para descer as caixas abaixo da logo */
+  margin-top: 220px !important; 
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   gap: 20px;
