@@ -1,37 +1,100 @@
-/* Garante que o corpo ocupe pelo menos toda a altura da tela */
-body {
+/* ==========================================
+   RESET & ESTRUTURA GERAL
+   ========================================== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
   
-  /* Faz a imagem de fundo cobrir a página inteira */
-  background-image: url('RED_20260721_141026_0000.png'); /* Altere para o caminho correto */
+  /* CONFIGURAÇÃO DA IMAGEM DE FUNDO (Cobre toda a tela sem faixa preta) */
+  background-image: url('RED_20260721_141026_0000.png'); /* IMPORTANTE: Troque 'fundo.jpg' pelo nome correto da sua imagem de fundo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Mantém o fundo fixo no scroll se desejar */
-}
-
-/* Estilo do Rodapé */
-footer {
-  width: 100%;
-  padding: 20px 0;
+  background-attachment: fixed;
+  
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-/* Botão invisível do Canal */
-.btn-invisible {
-  display: inline-block;
-  width: 200px;        /* Largura da área clicável */
-  height: 50px;        /* Altura da área clicável */
-  background: transparent;
+/* ==========================================
+   CONTAINER PRINCIPAL & CARDS DE PLOTAGEM
+   ========================================== */
+.main-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px 15px 90px 15px; /* Espaço extra na parte inferior para o botão do rodapé */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #ff0000;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.card h2 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   BOTÃO COPIAR
+   ========================================== */
+.btn-copiar {
+  background-color: #ff0000;
+  color: #ffffff;
   border: none;
-  outline: none;
+  border-radius: 12px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+}
+
+.btn-copiar:active {
+  transform: scale(0.97);
+  background-color: #cc0000;
+}
+
+/* ==========================================
+   BOTÃO INVISÍVEL NO RODAPÉ (INSCREVA-SE)
+   ========================================== */
+.link-inscreva-se {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* Altura da área clicável na parte inferior */
+  background: transparent;
+  display: block;
+  z-index: 9999;
   text-decoration: none;
+  outline: none;
 }
