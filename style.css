@@ -1,231 +1,93 @@
 /* =========================================
-   1. RESET E ESTILOS GERAIS
+   1. RESET GERAL E CONFIGURAÇÃO DA PÁGINA
    ========================================= */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial Black', Impact, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #0a0a0a url('fundo.png') no-repeat center top fixed;
-    background-size: cover;
-    color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 90px;
+  /* Altere 'fundo.png' caso a sua imagem de fundo tenha outro nome na pasta */
+  background: url('fundo.png') no-repeat center top;
+  background-size: 100% auto;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Posição das caixas: 220px empurra os cards para baixo do banner RED SANS */
+  padding-top: 220px; 
+  padding-bottom: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 100vh;
 }
 
 /* =========================================
-   2. PÁGINA INICIAL (INDEX)
+   2. ESTRUTURA CENTRAL
    ========================================= */
-.hero-section {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.welcome-title {
-    font-size: 32px;
-    line-height: 1.2;
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-    margin-bottom: 15px;
-}
-
-.welcome-title span {
-    color: #ff0000;
-}
-
-.welcome-text {
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    color: #cccccc;
-    max-width: 320px;
-    margin-bottom: 40px;
-}
-
-.scroll-indicator {
-    font-size: 14px;
-    color: #ff0000;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
-.action-section {
-    width: 90%;
-    max-width: 400px;
-    margin-bottom: 50px;
-}
-
-.action-card {
-    background: rgba(18, 18, 18, 0.95);
-    border: 2px solid #ff0000;
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
-}
-
-.action-card h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.action-card p {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #aaaaaa;
-    margin-bottom: 20px;
-}
-
-.btn-main {
-    display: block;
-    width: 100%;
-    background: #ff0000;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 16px 0;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
-    transition: transform 0.2s, background 0.2s;
-}
-
-.btn-main:hover {
-    background: #e60000;
-    transform: scale(1.02);
+.container {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 /* =========================================
-   3. PÁGINA DE PLOTAGENS (PLOTAGENS.HTML)
+   3. CAIXAS PRETAS (LAYOUT DA IMAGEM)
    ========================================= */
-.page-header {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    text-align: center;
+.card {
+  background: linear-gradient(180deg, #2b2b2b 0%, #151515 100%);
+  border: 2px solid #ff0000;
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-back {
-    display: inline-block;
-    color: #ff0000;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    margin-bottom: 15px;
-}
-
-.gallery-container {
-    width: 90%;
-    max-width: 450px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.plot-card {
-    background: rgba(18, 18, 18, 0.95);
-    border: 2px solid #ff0000;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
-}
-
-.plot-title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #ff0000;
-}
-
-.plot-image-container {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #333333;
-    margin-bottom: 20px;
-}
-
-.plot-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.code-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.code-box {
-    background: #111111;
-    border: 1px solid #333333;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-}
-
-.code-box h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.btn-copy {
-    width: 100%;
-    background: #ff0000;
-    color: #ffffff;
-    border: none;
-    padding: 12px 0;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
-    transition: background 0.2s, transform 0.1s;
-}
-
-.btn-copy:active {
-    transform: scale(0.98);
-}
-
-.btn-copy.copied {
-    background: #00b300 !important;
-    box-shadow: 0 4px 10px rgba(0, 179, 0, 0.4);
+/* Título dentro da caixa */
+.card-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
 }
 
 /* =========================================
-   4. LINK FIXO DO RODAPÉ (YOUTUBE)
+   4. BOTÃO REDONDO VERMELHO
    ========================================= */
-.link-inscreva-se {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.9);
-    border-top: 2px solid #ff0000;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    z-index: 1000;
-       }
+.btn-red {
+  width: 100%;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 14px 0;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-red:active {
+  transform: scale(0.97);
+  background-color: #cc0000;
+}
+
+/* =========================================
+   5. OCULTAR O CÓDIGO DA TELA
+   ========================================= */
+.code-data {
+  display: none;
+}
