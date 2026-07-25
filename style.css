@@ -27,19 +27,20 @@ body {
 }
 
 /* ==========================================
-   CONTAINER DOS CARDS
+   CONTAINER DOS CARDS (DESCIDO PARA ABAIXO DO LOGO)
    ========================================== */
 .main-container {
   width: 100%;
   max-width: 420px;
-  padding: 20px 15px 100px 15px; /* Espaço para não cobrir o conteúdo com o rodapé */
+  margin-top: 140px; /* EMPURRA AS CAIXAS PARA BAIXO */
+  padding: 0 15px 100px 15px; /* Espaço na parte inferior para não cobrir com o rodapé */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 /* ==========================================
-   CAIXAS DOS CARDS (RECUPERADAS)
+   CAIXAS DOS CARDS
    ========================================== */
 .card {
   background-color: rgba(18, 18, 18, 0.92); /* Fundo escuro do card */
