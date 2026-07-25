@@ -1,5 +1,5 @@
 /* =========================================
-   RESET E CONFIGURAÇÃO DA PÁGINA (CORRIGIDO)
+   1. RESET GERAL E PREVENÇÃO DE ESPAÇOS BRANCOS
    ========================================= */
 * {
   box-sizing: border-box;
@@ -7,48 +7,50 @@
   padding: 0;
 }
 
-html, body {
+html {
+  background-color: #000000 !important;
   width: 100%;
-  min-height: 100vh;
-  /* Fundo preto padrão para NUNCA aparecer espaço branco */
-  background-color: #000000; 
+  height: 100%;
 }
 
 body {
-  /* Substitua pelo nome exato do arquivo da sua imagem de fundo */
-  background-image: url('RED_20260721_141026_0000.png'); 
+  width: 100%;
+  min-height: 100vh;
+  /* Fundo preto absoluto para nunca aparecer partes brancas */
+  background-color: #000000 !important;
   
-  /* Faz a imagem cobrir toda a tela sem repetir ou deixar espaço branco */
-  background-size: cover;
-  background-position: center top;
+  /* Imagem de fundo ajustada */
+  background-image: url('RED_20260721_141026_0000.png');
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: center top;
+  background-size: 100% auto;
   
   font-family: 'Arial Black', Impact, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   
-  /* Posição dos cards em relação ao banner RED SANS */
-  padding-top: 180px; 
-  padding-bottom: 100px;
+  /* Alinhamento dos cards na tela */
+  padding-top: 200px; 
+  padding-bottom: 120px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 /* =========================================
-   ESTRUTURA CENTRAL DOS CARDS
+   2. ESTRUTURA CENTRAL DOS CARDS
    ========================================= */
-.container, .main-container {
+.main-container {
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   gap: 25px;
+  z-index: 1;
 }
 
 /* =========================================
-   CAIXAS / CARDS DOS CÓDIGOS
+   3. CARDS / CAIXAS DE PLOTAGEM
    ========================================= */
 .card {
   background: rgba(18, 18, 18, 0.95);
@@ -56,14 +58,14 @@ body {
   border-radius: 20px;
   padding: 25px 20px;
   text-align: center;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.card h2, .card-title {
+.card h2 {
   color: #ffffff;
   font-size: 20px;
   font-weight: 800;
@@ -74,9 +76,9 @@ body {
 }
 
 /* =========================================
-   BOTÃO REDONDO VERMELHO
+   4. BOTÃO VERMELHO DE COPIAR
    ========================================= */
-.btn-red, .btn-copiar {
+.btn-copiar {
   width: 100%;
   background-color: #ff0000;
   color: #ffffff;
@@ -86,25 +88,26 @@ body {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
   transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
-.btn-red:active, .btn-copiar:active {
+.btn-copiar:active {
   transform: scale(0.97);
   background-color: #cc0000;
 }
 
 /* =========================================
-   BOTÃO INVISÍVEL "INSCREVA-SE" (RODAPÉ)
+   5. BOTÃO TRANSPARENTE INSCREVA-SE (RODAPÉ)
    ========================================= */
 .link-inscreva-se {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  z-index: 1000;
+  height: 80px; /* Cobrirá com precisão a faixa do Inscreva-se */
+  z-index: 9999;
   cursor: pointer;
-  text-decoration: none;
+  background: transparent;
+  display: block;
 }
