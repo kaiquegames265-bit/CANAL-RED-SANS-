@@ -1,113 +1,37 @@
-/* =========================================
-   1. RESET GERAL E PREVENÇÃO DE ESPAÇOS BRANCOS
-   ========================================= */
-* {
-  box-sizing: border-box;
+/* Garante que o corpo ocupe pelo menos toda a altura da tela */
+body {
   margin: 0;
   padding: 0;
-}
-
-html {
-  background-color: #000000 !important;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  width: 100%;
   min-height: 100vh;
-  /* Fundo preto absoluto para nunca aparecer partes brancas */
-  background-color: #000000 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
-  /* Imagem de fundo ajustada */
-  background-image: url('RED_20260721_141026_0000.png');
+  /* Faz a imagem de fundo cobrir a página inteira */
+  background-image: url('SUA_IMAGEM_DE_FUNDO.jpg'); /* Altere para o caminho correto */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% auto;
-  
-  font-family: 'Arial Black', Impact, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  /* Alinhamento dos cards na tela */
-  padding-top: 200px; 
-  padding-bottom: 120px;
-  padding-left: 15px;
-  padding-right: 15px;
+  background-attachment: fixed; /* Mantém o fundo fixo no scroll se desejar */
 }
 
-/* =========================================
-   2. ESTRUTURA CENTRAL DOS CARDS
-   ========================================= */
-.main-container {
+/* Estilo do Rodapé */
+footer {
   width: 100%;
-  max-width: 380px;
+  padding: 20px 0;
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  z-index: 1;
-}
-
-/* =========================================
-   3. CARDS / CAIXAS DE PLOTAGEM
-   ========================================= */
-.card {
-  background: rgba(18, 18, 18, 0.95);
-  border: 2px solid #ff0000;
-  border-radius: 20px;
-  padding: 25px 20px;
-  text-align: center;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.9);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.card h2 {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
-
-/* =========================================
-   4. BOTÃO VERMELHO DE COPIAR
-   ========================================= */
-.btn-copiar {
-  width: 100%;
-  background-color: #ff0000;
-  color: #ffffff;
-  border: none;
-  padding: 14px 0;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
-  transition: transform 0.1s ease, background-color 0.2s ease;
-}
-
-.btn-copiar:active {
-  transform: scale(0.97);
-  background-color: #cc0000;
-}
-
-/* =========================================
-   5. BOTÃO TRANSPARENTE INSCREVA-SE (RODAPÉ)
-   ========================================= */
-.link-inscreva-se {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px; /* Cobrirá com precisão a faixa do Inscreva-se */
-  z-index: 9999;
-  cursor: pointer;
+/* Botão invisível do Canal */
+.btn-invisible {
+  display: inline-block;
+  width: 200px;        /* Largura da área clicável */
+  height: 50px;        /* Altura da área clicável */
   background: transparent;
-  display: block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
 }
